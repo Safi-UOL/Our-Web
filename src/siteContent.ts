@@ -120,7 +120,7 @@ export const site = {
 
   hero: {
     eyebrow: siteName,
-    headline: 'Ek choti si duniya, sirf tum aur main ❤️',
+    headline: 'Ek choti si duniya, sirf Ap aur main ❤️',
     subline:
       'Scroll slowly through our stories, memories, and every moment we’ve shared since our journey began',
     primaryCta: { to: '/memories', label: 'Open memories' },
