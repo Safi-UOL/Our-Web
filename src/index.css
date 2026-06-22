@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root,
+[data-theme='light'] {
+  --ink: #1c1424;
+  --ink-soft: #4a3d55;
+  --cream: #faf6f1;
+  --cream-dark: #f0e8df;
+  --rose: #b85c7a;
+  --rose-deep: #8f3d58;
+  --gold: #c4a35a;
+  --line: rgba(28, 20, 36, 0.12);
+  --shadow: 0 24px 60px rgba(28, 20, 36, 0.12);
+  --radius: 14px;
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --surface: #ffffff;
+  --surface-muted: rgba(255, 255, 255, 0.65);
+  --bg-page: radial-gradient(120% 80% at 50% -10%, #fff6f0 0%, var(--cream) 45%, #ebe2d9 100%);
+  --nav-bg: color-mix(in srgb, var(--cream) 88%, transparent);
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --ink: #faf4f7;
+  --ink-soft: #d8c8d2;
+  --cream: #0c090c;
+  --cream-dark: #161014;
+  --rose: #e8a4b8;
+  --rose-deep: #d47894;
+  --gold: #d4b078;
+  --line: rgba(255, 228, 236, 0.09);
+  --shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+  --surface: #1a1418;
+  --surface-muted: rgba(26, 20, 24, 0.94);
+  --bg-page:
+    radial-gradient(ellipse 100% 70% at 50% -15%, rgba(180, 90, 120, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 80%, rgba(196, 163, 90, 0.08) 0%, transparent 45%),
+    linear-gradient(165deg, #141016 0%, #0c090c 48%, #080608 100%);
+  --nav-bg: color-mix(in srgb, #0c090c 90%, transparent);
+  --glow-rose: rgba(232, 164, 184, 0.18);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  background: var(--bg-page);
+  transition: background 0.25s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+a {
+  color: var(--rose-deep);
+}
+
+a:hover {
+  color: var(--rose);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--rose) 35%, transparent);
+  color: var(--ink);
+}
+
+body.has-now-playing .site-shell {
+  padding-bottom: 5.5rem;
+}
+
+.global-audio-engine {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
