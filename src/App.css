@@ -373,6 +373,10 @@ h3 {
   text-shadow: 0 0 40px var(--glow-rose, rgba(232, 164, 184, 0.2));
 }
 
+[data-theme='dark'] .hero-block__lead {
+  color: #d8c8d2 !important;
+}
+
 .page-hero--romantic .page-hero__title::after {
   content: '♥';
   display: block;
@@ -424,8 +428,10 @@ h3 {
 }
 
 .hero-block--cinematic .hero-block__title {
-  color: #2b1722 !important;
-  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.6);
+  color: var(--ink) !important;
+  text-shadow: 0 0 24px rgba(232, 164, 184, 0.25);
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .hero-block--cinematic .hero-block__lead {
@@ -791,8 +797,14 @@ h3 {
   grid-column: 1 / -1;
   padding: 30px;
   border-radius: 24px;
-  background: white;
+  background: var(--surface);
+  border: 1px solid var(--line);
   box-shadow: var(--shadow);
+}
+
+.contact-message-box h3,
+.contact-message-box p {
+  color: var(--ink);
 }
 
 .contact-message-box textarea {
@@ -801,6 +813,9 @@ h3 {
   border-radius: 16px;
   margin-top: 12px;
   resize: none;
+  background: var(--cream-dark);
+  color: var(--ink);
+  border: 1px solid var(--line);
 }
 
 .contact-message-box button {
@@ -870,7 +885,7 @@ h3 {
   padding: 0 1.4rem;
   border-radius: 999px;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--surface-muted);
   border: 1.5px solid rgba(184, 92, 122, 0.35);
   backdrop-filter: blur(10px);
   transition: all 0.28s ease;
@@ -2358,6 +2373,50 @@ h3 {
 }
 
 /* ——— Responsive breakpoints ——— */
+@media (max-width: 900px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .site-nav__row {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .site-nav__brand {
+    justify-content: center;
+  }
+
+  .site-nav__links {
+    width: 100%;
+  }
+
+  .site-nav__links ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  .site-nav__link {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 14px;
+    background: var(--surface-muted);
+    border: 1px solid var(--line);
+  }
+
+  .theme-toggle {
+    align-self: center;
+  }
+}
+
 @media (max-width: 768px) {
   .site-nav {
     padding: 1rem;
@@ -2383,7 +2442,13 @@ h3 {
   }
 
   .hero-block__title {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    line-height: 1.25;
+  }
+
+  .hero-block__lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .section__title {
@@ -2395,9 +2460,7 @@ h3 {
   }
 
   .contact-pill {
-    min-height: 70px;
-    padding: 0 1rem;
-    gap: 0.8rem;
+    min-height: 72px;
   }
 
   .contact-pill__label {
@@ -2413,9 +2476,14 @@ h3 {
     height: 28px;
   }
 
+  .contact-pill-wrap {
+    grid-template-columns: 1fr;
+  }
+
   .hero-block--cinematic {
-    min-height: 60vh;
-    padding: 3rem 1rem;
+    min-height: auto;
+    padding: 60px 20px;
+    border-radius: 18px;
   }
 
   .home-lyrics-overlay__text {
@@ -2431,6 +2499,19 @@ h3 {
 
   .meetup-card {
     padding: 24px 16px;
+  }
+
+  .clock-since__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory-card__content,
+  .card {
+    padding: 16px;
+  }
+
+  .page-hero {
+    padding: 28px 16px;
   }
 }
 
@@ -2478,6 +2559,19 @@ h3 {
 
   .bday-player {
     padding: 0.85rem;
+  }
+
+  .site-nav__links ul {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-music-btn,
+  .btn {
+    width: 100%;
+  }
+
+  .hero-block__actions {
+    flex-direction: column;
   }
 }
 
