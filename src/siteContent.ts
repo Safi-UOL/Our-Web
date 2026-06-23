@@ -6,8 +6,8 @@
  * matches, set `artist` (e.g. film or singer). To force your own words, add `lyrics: ['line', ...]`.
  */
 const meet = {
-  labelDisplay: '18 October 2021',
-  startUtcIso: '2021-10-18T00:00:00.000Z',
+  labelDisplay: '19 Dec 2021',
+  startUtcIso: '2021-12-19T00:00:00.000Z',
 } as const
 
 const siteName = 'Rifi'
@@ -195,7 +195,7 @@ Aaram se scroll karo… yeh sirf ek website nahi, humari kahani ka ek hissa hai 
       'Little things that make us us — milestones, memories, and secrets only we share.',
     points: [
       {
-        title: '18 Oct 2021',
+        title: '19 Dec 2021',
         body: `${meet.labelDisplay} - Academy mein pehli baar aapko dekha. Sabse pehle aapka niqab notice kiya tha. Shayad tab nahi pata tha, lekin aaj samajhta hoon ke aapki simplicity hi woh cheez hai jo mujhe hamesha aapki taraf kheenchti rahi `,
       },
       {
